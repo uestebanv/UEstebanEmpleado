@@ -12,8 +12,7 @@ namespace BL
             {
                 using(DL.UestebanEmpleadoContext context = new DL.UestebanEmpleadoContext())
                 {
-                    var query = context.Database.ExecuteSqlRaw($"EmpleadoAdd '{empleado.NumeroNomina}'," +
-                                                                           $"'{empleado.Nombre}'," +
+                    var query = context.Database.ExecuteSqlRaw($"EmpleadoAdd '{empleado.Nombre}'," +
                                                                            $"'{empleado.ApellidoPaterno}'," +
                                                                            $"'{empleado.ApellidoMaterno}'," +
                                                                            $"'{empleado.Estado.IdEstado}'");
@@ -45,7 +44,6 @@ namespace BL
                 using(DL.UestebanEmpleadoContext context = new DL.UestebanEmpleadoContext())
                 {
                     var query = context.Database.ExecuteSqlRaw($"EmpleadoUpdate '{empleado.IdEmpleado}'," +
-                                                                               $"'{empleado.NumeroNomina}'," +
                                                                                $"'{empleado.Nombre}'," +
                                                                                $"'{empleado.ApellidoPaterno}'," +
                                                                                $"'{empleado.ApellidoMaterno}'," +
