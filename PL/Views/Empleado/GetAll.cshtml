@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="conteiner">
+    <div class="row">
+        <h2>Empleados</h2>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" id="btnAgregar" onclick="Modal()">Agregar</button>
+
+</div>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table id="tblEmpleado" class="table table-hover" border="1">
+                <thead>
+                    <tr>
+                        <td class="text-center" style="font-weight:bold;">Editar</td>
+                        <td class="text-center" style="font-weight:bold;">Numero de Nomina</td>
+                        <td class="text-center" style="font-weight:bold;">Nombre</td>
+                        <td class="text-center" style="font-weight:bold;">Apellido Paterno</td>
+                        <td class="text-center" style="font-weight:bold;">Apellido Materno</td>
+                        <td class="text-center" style="font-weight:bold;">Estado</td>
+                        <td class="text-center" style="font-weight:bold;">Eliminar</td>
+                    </tr>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="ActualizarModal" tabindex="-1" role="dialog" aria-labelledby="idModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title align-content-center" id="idModalLabel">Empleado</h4>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text" class="form-control visually-hidden" id="txtIdEmpleado" placeholder="IdEmpleado" disabled="disabled" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="text" class="form-control" id="txtNumeroNomina" placeholder="NumeroNomina" />
+                    </div>
+                    <div class="row">
+                        <input type="text" class="form-control" id="txtNombre" placeholder="Nombre" />
+                    </div>
+                    <div class="row">
+                        <input type="text" class="form-control" id="txtApellidoPaterno" placeholder="ApellidoPaterno" />
+                    </div>
+                    <div class="row">
+                        <input type="text" class="form-control" id="txtApellidoMaterno" placeholder="ApellidoMaterno" />
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="Estado">Estado</label>
+                            <select name="estado" class="form-control" id="ddlEstado"></select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnUpdate" onclick="Actualizar()">Agregar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="modal" id="idModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Datos del Empleado</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Cambios realizados</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" value="Regresar" data-bs-dismiss="modal">Regresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/CRUD/Empleado.js"></script>
+
